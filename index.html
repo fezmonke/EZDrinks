@@ -2,22 +2,25 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>ezdrink.de – Vodka O-Saft bestellen</title>
+<title>ezdrink.de – EZDrinks bestellen</title>
 <style>
   body { font-family: Arial, sans-serif; padding: 40px; background: #f2f2f2; }
   h1 { text-align: center; }
+  .logo { position: absolute; top: 20px; left: 20px; font-weight: bold; font-size: 1.2em; }
   form { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
   label { display:block; margin-top:15px; font-weight:bold; }
   input, select { width:100%; padding:8px; margin-top:5px; }
+  .hinweis { font-size: 0.9em; color: #555; margin-top: 5px; }
   button { margin-top:20px; width:100%; padding:10px; background:#007bff; color:white; border:none; border-radius:4px; font-size:1.1em; }
 </style>
 </head>
 <body>
 
-<h1>Vodka O-Saft bestellen</h1>
+<div class="logo">EZDrinks</div>
 
-<form action="https://formsubmit.co/ezdrinksshop@gmail.com
-" method="POST">
+<h1>EZDrinks bestellen</h1>
+
+<form action="https://formsubmit.co/ezdrinksshop@gmail.com" method="POST">
 
   <label>Name</label>
   <input type="text" name="name" required>
@@ -36,9 +39,11 @@
     <option>Lieferung</option>
     <option>Selbstabholung</option>
   </select>
+  <div class="hinweis">Hinweis: Lieferung kostet 5 € extra</div>
 
   <button type="submit">Bestellung absenden</button>
 </form>
 
 </body>
 </html>
+

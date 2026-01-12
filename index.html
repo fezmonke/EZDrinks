@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>EZDrinks – Bestellen</title>
+
+  <!-- Mobile scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- Logo -->
+  <img src="EZDrinks.png" alt="EZDrinks Logo" class="logo">
+
+  <!-- Content -->
+  <main class="container">
+
+    <h1 class="title">EZDrinks bestellen</h1>
+
+    <form action="https://formsubmit.co/ezdrinksshop@gmail.com" method="POST">
+
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>Adresse</label>
+      <input type="text" name="adresse" required>
+
+      <label>Telefonnummer</label>
+      <input type="tel" name="telefon" required>
+
+      <label>Anzahl Flaschen</label>
+      <input type="number" name="flaschen" min="1" required>
+
+      <div class="radio-group">
+        <label><input type="radio" name="lieferart" value="Selbstabholung" required> Selbstabholung</label>
+        <label><input type="radio" name="lieferart" value="Lieferung"> Lieferung</label>
+      </div>
+
+      <p class="hint">Hinweis: Lieferung kostet 5€</p>
+
+      <button type="submit">Bestellung absenden</button>
+
+    </form>
+
+  </main>
+
+</body>
+</html>

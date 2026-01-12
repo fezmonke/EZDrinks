@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>EZDrinks – Bestellen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-drinks">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <img src="EZDrinks.png" class="nav-logo" alt="EZDrinks Logo">
+    <div class="nav-links">
+      <a href="index.html" class="active">Kaufen</a>
+      <a href="about.html">Über EZDrinks</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="container">
+    <h1 class="title">EZDrinks bestellen</h1>
+
+    <form action="https://formsubmit.co/ezdrinksshop@gmail.com" method="POST">
+
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>Adresse</label>
+      <input type="text" name="adresse" required>
+
+      <label>Telefonnummer</label>
+      <input type="tel" name="telefon" required>
+
+      <label>Anzahl Flaschen</label>
+      <input type="number" id="flaschen" name="flaschen" min="1" value="1" required>
+
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="lieferart" value="Selbstabholung" checked>
+          Selbstabholung
+        </label>
+        <label>
+          <input type="radio" name="lieferart" value="Lieferung">
+          Lieferung
+        </label>
+      </div>
+
+      <p class="hint">Hinweis: Lieferung kostet 5€</p>
+      <p class="price">Preis: <span id="preis">4,50 €</span></p>
+
+      <button type="submit" id="orderButton">
+        Bestellung absenden (4,50 €)
+      </button>
+
+    </form>
+  </main>
+
+  <script>
+    const pricePerBottle = 4.5;
+    const deliveryCost = 5;
+
+    const bottleInput = document.getElementById("flaschen");
+    const priceText = document.getElementById("preis");
+    const orderButton = document.getElementById("orderButton");
+    const radios = document.querySelectorAll('input[name="lieferart"]');
+
+    function updatePrice() {
+      let total = bottleInput.value * pricePerBottle;
+      if (document.querySelector('input[name="lieferart"]:checked').value === "Lieferung") {
+        total += deliveryCost;
+      }
+      const formatted = total.toFixed(2).replace(".", ",") + " €";
+      priceText.textContent = formatted;
+      orderButton.textContent = `Bestellung absenden (${formatted})`;
+    }
+
+    bottleInput.addEventListener("input", updatePrice);
+    radios.forEach(r => r.addEventListener("change", updatePrice));
+    updatePrice();
+  </script>
+
+</body>
+</html>
